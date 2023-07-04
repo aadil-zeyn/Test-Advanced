@@ -9,16 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-@Configuration
-@EnableWebSecurity
-public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth)throws Exception{
-        auth.authenticationProvider(new DaoAuthenticationProvider());
-    }
-    @Override
-    protected void configure(HttpSecurity http)throws Exception{
-        http.authorizeRequests().antMatchers("/api/v1/issue-book").permitAll().anyRequest().authenticated()
-                .and().exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
-    }
+
+public class WebSecurityConfigurer  {
+
 }
