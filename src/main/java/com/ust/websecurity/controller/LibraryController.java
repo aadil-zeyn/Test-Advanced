@@ -17,10 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1")
 public class LibraryController {
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private IssueRepository issueRepository;
+
 
     @PostMapping("/issue-book")
     public ResponseEntity<Issue> issuebook(@RequestBody Issue issue){
